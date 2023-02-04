@@ -3,8 +3,8 @@ import Login from '../index';
 import {Provider} from 'react-redux';
 import configureStore from 'redux-mock-store';
 import {MenuProvider} from 'react-native-popup-menu';
-import {render} from '@testing-library/react-native';
-import {SafeAreaProvider} from 'react-native-safe-area-context';
+import {render, fireEvent, screen} from '@testing-library/react-native';
+import {SafeAreaProvider, SafeAreaView} from 'react-native-safe-area-context';
 
 describe('Login renders correctly', () => {
   const initialState = {appReducer: {languageCode: 'ar'}};
@@ -15,9 +15,7 @@ describe('Login renders correctly', () => {
     wrapper = render(
       <Provider store={store}>
         <MenuProvider>
-          <SafeAreaProvider>
-            <Login />
-          </SafeAreaProvider>
+          <Login />
         </MenuProvider>
       </Provider>,
     );
@@ -26,7 +24,10 @@ describe('Login renders correctly', () => {
     expect(wrapper.toJSON()).toMatchSnapshot();
   });
   it('Login renders correctly ', () => {
-    // fireEvent.changeText(screen.getByTestId('emailInput'), 'kul@gmail.com');
-    // fireEvent(screen.getByTestId('pwdInput'), 'onChangeText', 'Passw0rd');
+    fireEvent.changeText(screen.getByTestId('emailInput'), 'kul@gmail.com');
+    fireEvent.changeText(screen.getByTestId('pwdInput'), 'Passw0rd');
+    expect(screen.getByTestId('emailInput').props.value).toBe('kul@gmail.com');
+    expect(screen.getByTestId('pwdInput').props.value).toBe('Passw0rd');
+    fireEvent.press(screen.getByTestId('submitBtn'));
   });
 });

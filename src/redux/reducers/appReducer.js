@@ -6,7 +6,7 @@ import {
   CHANGE_APP_STATE_LOGGED_IN,
 } from '../actions/app-actions';
 
-const initialState = {
+export const initialState = {
   languageCode: 'na',
   isLoggedIn: false,
   defaultRTL: false,

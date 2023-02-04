@@ -14,11 +14,9 @@ import {useSelector} from 'react-redux';
 import {Text, View} from 'react-native';
 import {RootState} from 'redux/reducers';
 
-const Header = ({title = '', ExtraView = null}) => {
-  const {languageCode: lc} = useSelector(
-    (state: RootState) => state.appReducer,
-  );
-  const curLangName = lc === ARABIC_LANGUAGE ? ARABIC : ENGLISH;
+const Header = ({title = '', ExtraView = null}: any) => {
+  const {languageCode} = useSelector((state: RootState) => state.appReducer);
+  const curLangName = languageCode === ARABIC_LANGUAGE ? ARABIC : ENGLISH;
 
   // Language change menu
   const LanguageMenu = () => {
@@ -39,22 +37,22 @@ const Header = ({title = '', ExtraView = null}) => {
             text={ENGLISH}
             customStyles={{
               optionText:
-                lc === ENGLISH_LANGUAGE
+                languageCode === ENGLISH_LANGUAGE
                   ? styles.langSelectedText
                   : styles.langText,
             }}
-            disabled={lc === ENGLISH_LANGUAGE}
+            disabled={languageCode === ENGLISH_LANGUAGE}
           />
           <MenuOption
             value={ARABIC_LANGUAGE}
             text={ARABIC}
             customStyles={{
               optionText:
-                lc === ARABIC_LANGUAGE
+                languageCode === ARABIC_LANGUAGE
                   ? styles.langSelectedText
                   : styles.langText,
             }}
-            disabled={lc === ARABIC_LANGUAGE}
+            disabled={languageCode === ARABIC_LANGUAGE}
           />
         </MenuOptions>
       </Menu>

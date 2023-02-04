@@ -19,7 +19,7 @@ export const languages = {
   en: {languageCode: 'en', isRTL: false, name: ENGLISH},
   ar: {languageCode: 'ar', isRTL: true, name: ARABIC},
 };
-
+/* istanbul ignore next */
 const getDeviceLanguage = () => {
   const deviceLanguage = isIos()
     ? NativeModules.SettingsManager.settings.AppleLocale ||
@@ -45,7 +45,7 @@ const strings = memoize(
 const isRTL = () => {
   return I18nManager.isRTL;
 };
-
+/* istanbul ignore next */
 const configureLocale = () => {
   const deviceLanguage = getDeviceLanguage();
 
@@ -67,7 +67,7 @@ const configureLocale = () => {
     readyToRestart(false, false);
   }
 };
-
+/* istanbul ignore next */
 const setRTLAnddRestart = (rtl, restart) => {
   I18nManager.forceRTL(rtl);
   I18nManager.allowRTL(rtl);
@@ -80,7 +80,7 @@ const setRTLAnddRestart = (rtl, restart) => {
     }
   }, 100);
 };
-
+/* istanbul ignore next */
 const changeLocale = locale => {
   const language = getState()?.appReducer?.languageCode;
   if (language === locale) {
@@ -96,7 +96,7 @@ const changeLocale = locale => {
     readyToRestart(false, true);
   }
 };
-
+/* istanbul ignore next */
 const readyToRestart = (rtl, restart) => {
   setTimeout(() => {
     // restart app

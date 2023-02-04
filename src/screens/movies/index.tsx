@@ -45,17 +45,17 @@ const Movies = () => {
     if (page > 1) setPage(page - 1);
   }, [page]);
 
-  const getMovieCard = ({item}: {poster_path: string; title: string}) => {
+  const getMovieCard = ({item: {poster_path, title}}: any): JSX.Element => {
     return (
       <View style={styles.listItem}>
         <Card mode="outlined" style={styles.cardStyle}>
           <Card.Cover
             style={styles.cardCoverStyle}
-            source={{uri: `${POSTER_BASE_URL}${item.poster_path}`}}
+            source={{uri: `${POSTER_BASE_URL}${poster_path}`}}
           />
           <Card.Content>
             <Text variant="titleSmall" style={styles.textStyle}>
-              {item.title}
+              {title}
             </Text>
           </Card.Content>
         </Card>
@@ -64,7 +64,7 @@ const Movies = () => {
   };
 
   //Just to fetch next & previous page movies
-  const getExtraView = () => (
+  const getExtraView = (): JSX.Element => (
     <>
       <Appbar.Action
         icon={isRTL() ? 'skip-next' : 'skip-previous'}
@@ -93,7 +93,7 @@ const Movies = () => {
           <FlatList
             numColumns={NUMBER_OF_COLUMNS}
             data={moviesResponse?.results}
-            keyExtractor={item => item.id.toString()}
+            keyExtractor={item => item?.id?.toString()}
             ListEmptyComponent={EmptyListView}
             renderItem={getMovieCard}
           />

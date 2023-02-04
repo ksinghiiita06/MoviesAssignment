@@ -14,11 +14,11 @@ describe('Common Header', () => {
   let wrapper: any;
   beforeEach(() => {
     wrapper = render(
-      <SafeAreaProvider>
-        <Provider store={store}>
-          <Header />
-        </Provider>
-      </SafeAreaProvider>,
+      <Provider store={store}>
+        {/* <SafeAreaProvider> */}
+        <Header />
+        {/* </SafeAreaProvider> */}
+      </Provider>,
     );
   });
   it('Header renders correctly ', () => {

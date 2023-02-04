@@ -2,6 +2,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import React, {useCallback} from 'react';
 import {useSelector} from 'react-redux';
+import {RootState} from 'redux/reducers';
 import Login from '../screens/login';
 import Movies from '../screens/movies';
 import {LOGIN_ROUTE_NAME, MOVIES_ROUTE_NAME} from './routes';
@@ -39,7 +40,7 @@ export const InAppNavigation = () => {
 };
 
 const RootNavigation = () => {
-  const appReducer = useSelector(state => state.appReducer);
+  const appReducer = useSelector((state: RootState) => state.appReducer);
   const {isLoggedIn} = appReducer;
   const getActiveNavigation = useCallback(() => {
     return isLoggedIn ? <InAppNavigation /> : <OnboardingNavigation />;
