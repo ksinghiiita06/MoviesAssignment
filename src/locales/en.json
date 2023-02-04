@@ -1,0 +1,10 @@
+{
+  "screen1Title": "Login",
+  "screen2Title": "Movies",
+  "email": "Email",
+  "password": "Password",
+  "submit": "Submit",
+  "generic_error": "Something went wrong...",
+  "loading": "Loading...",
+  "empty_list_msg": "No data to show..."
+}

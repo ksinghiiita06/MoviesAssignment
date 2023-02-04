@@ -1,0 +1,2 @@
+export const LOGIN_ROUTE_NAME = 'LOGIN_ROUTE_NAME';
+export const MOVIES_ROUTE_NAME = 'MOVIES_ROUTE_NAME';

@@ -1,0 +1,10 @@
+{
+  "screen1Title": "تسجيل الدخول",
+  "screen2Title": "أفلام",
+  "email": "بريد إلكتروني",
+  "password": "كلمة المرور",
+  "submit": "إرسال",
+  "generic_error": "هناك خطأ ما...",
+  "loading": "جار التحميل...",
+  "empty_list_msg": "لا توجد بيانات للعرض ..."
+}
