@@ -39,6 +39,7 @@ export const InAppNavigation = () => {
   );
 };
 
+//Main navigation
 const RootNavigation = () => {
   const appReducer = useSelector((state: RootState) => state.appReducer);
   const {isLoggedIn} = appReducer;

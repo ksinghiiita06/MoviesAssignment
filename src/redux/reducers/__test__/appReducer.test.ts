@@ -2,7 +2,7 @@ import {ARABIC_LANGUAGE, ENGLISH_LANGUAGE} from '../../../common/localize';
 import {
   changeAppLocaleToArabic,
   changeAppLocaleToEnglish,
-  changeAppStateLoggedInAction,
+  changeLoginStateAction,
 } from '../../../redux/actions/app-actions';
 import AppReducer, {initialState} from '../appReducer';
 
@@ -25,7 +25,7 @@ describe('appReducer', () => {
     });
   });
   it('should handle CHANGE_APP_STATE_LOGGED_IN', () => {
-    expect(AppReducer(initialState, changeAppStateLoggedInAction())).toEqual({
+    expect(AppReducer(initialState, changeLoginStateAction())).toEqual({
       ...initialState,
       isLoggedIn: true,
     });

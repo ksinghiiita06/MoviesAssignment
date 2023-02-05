@@ -15,8 +15,9 @@ export const changeAppLocaleToEnglish = data => {
     payload: {data},
   };
 };
-export const changeAppStateLoggedInAction = () => {
+export const changeLoginStateAction = data => {
   return {
     type: CHANGE_APP_STATE_LOGGED_IN,
+    payload: data,
   };
 };

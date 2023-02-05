@@ -16,7 +16,7 @@ import {RootState} from 'redux/reducers';
 
 const NUMBER_OF_COLUMNS = 2;
 
-const Movies = () => {
+const Movies = ({navigation}: any) => {
   const {languageCode} = useSelector((state: RootState) => state.appReducer);
   const [page, setPage] = useState(1);
   const {
@@ -85,7 +85,11 @@ const Movies = () => {
 
   return (
     <>
-      <Header title={strings('screen2Title')} ExtraView={getExtraView()} />
+      <Header
+        title={strings('screen2Title')}
+        ExtraView={getExtraView()}
+        navigation={navigation}
+      />
       {fetching ? (
         <LoadingView />
       ) : (

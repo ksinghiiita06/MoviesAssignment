@@ -4,4 +4,5 @@ export const API_VERSION = 3;
 
 export const POPULAR_MOVIES = 'movie/popular?api_key={0}&language={1}&page={2}';
 
+//Prepend API version
 export const getCompleteUrl = url => `${API_VERSION}/${url}`;

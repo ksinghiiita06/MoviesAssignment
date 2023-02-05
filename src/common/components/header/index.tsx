@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useCallback, useContext} from 'react';
 import {Appbar} from 'react-native-paper';
 import {WHITE} from '../../colors';
 import {ARABIC, ENGLISH} from '../../constants';
@@ -10,13 +10,19 @@ import {
   MenuTrigger,
 } from 'react-native-popup-menu';
 import styles from './styles';
-import {useSelector} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import {Text, View} from 'react-native';
-import {RootState} from 'redux/reducers';
+import {RootState} from '../../../redux/reducers';
+import {changeLoginStateAction} from '../../../redux/actions/app-actions';
 
-const Header = ({title = '', ExtraView = null}: any) => {
+const Header = ({title = '', ExtraView = null, navigation}: any) => {
   const {languageCode} = useSelector((state: RootState) => state.appReducer);
   const curLangName = languageCode === ARABIC_LANGUAGE ? ARABIC : ENGLISH;
+  const dispatch = useDispatch();
+
+  const goBack = useCallback(() => {
+    if (navigation) dispatch(changeLoginStateAction(false));
+  }, []);
 
   // Language change menu
   const LanguageMenu = () => {
@@ -62,6 +68,7 @@ const Header = ({title = '', ExtraView = null}: any) => {
   return (
     <>
       <Appbar.Header style={styles.header} mode="small">
+        {navigation && <Appbar.BackAction onPress={goBack} color={WHITE} />}
         <Appbar.Content title={title} color={WHITE} />
         {ExtraView}
         <LanguageMenu />

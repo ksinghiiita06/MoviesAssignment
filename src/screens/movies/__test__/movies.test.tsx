@@ -4,7 +4,6 @@ import {Provider} from 'react-redux';
 import configureStore from 'redux-mock-store';
 import {MenuProvider} from 'react-native-popup-menu';
 import {render} from '@testing-library/react-native';
-import {SafeAreaProvider} from 'react-native-safe-area-context';
 
 describe('Movies component with loading', () => {
   const mockStore = configureStore();

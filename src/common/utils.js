@@ -27,7 +27,8 @@ export const normalize = size => {
  * @returns boolean
  */
 export const isValidPassword = password => {
-  const regExp = /^(?=.*?[A-Z])(?=.*?[0-9]).{8,}$/;
+  const regExp =
+    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$@!%&*?])[A-Za-z\d#$@!%&*?]{8,15}$/;
   return regExp.test(password);
 };
 /**

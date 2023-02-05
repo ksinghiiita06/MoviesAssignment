@@ -42,7 +42,7 @@ const AppReducer = (state = initialState, action) => {
     case CHANGE_APP_STATE_LOGGED_IN:
       return {
         ...state,
-        isLoggedIn: true,
+        isLoggedIn: payload,
       };
 
     default:

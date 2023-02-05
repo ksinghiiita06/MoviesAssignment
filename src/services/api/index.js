@@ -1,6 +1,7 @@
 import {BASE_URL} from './apiConstants';
 import axios from 'axios';
 
+//Basic config
 const config = {
   baseURL: BASE_URL,
   timeout: 50 * 1000,

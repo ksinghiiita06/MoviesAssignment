@@ -1,7 +1,7 @@
 import {
   changeAppLocaleToArabic,
   changeAppLocaleToEnglish,
-  changeAppStateLoggedInAction,
+  changeLoginStateAction,
   CHANGE_APP_LOCALE_AR,
   CHANGE_APP_LOCALE_EN,
   CHANGE_APP_STATE_LOGGED_IN,
@@ -21,7 +21,7 @@ describe('App common actions', () => {
     });
   });
   it('changeAppStateLoggedInAction returns correct payload', () => {
-    expect(changeAppStateLoggedInAction()).toEqual({
+    expect(changeLoginStateAction()).toEqual({
       type: CHANGE_APP_STATE_LOGGED_IN,
     });
   });

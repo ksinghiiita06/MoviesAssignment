@@ -5,7 +5,7 @@ import {strings} from '../../common/localize';
 import styles from './login.styles';
 import {isValidEmail, isValidPassword} from '../../common/utils';
 import {useDispatch} from 'react-redux';
-import {changeAppStateLoggedInAction} from '../../redux/actions/app-actions';
+import {changeLoginStateAction} from '../../redux/actions/app-actions';
 import Header from '../../common/components/header';
 
 const Login = () => {
@@ -25,25 +25,26 @@ const Login = () => {
     setPassword(password);
   }, []);
   const handleSubmit = useCallback(() => {
-    dispatch(changeAppStateLoggedInAction());
+    dispatch(changeLoginStateAction());
   }, []);
 
-  const Form = () => {
+  const getForm = () => {
     return (
       <>
         <TextInput
-          accessibilityLabel="emailInput"
           testID="emailInput"
           label={strings('email')}
           value={email}
           onChangeText={text => handleChangeEmail(text)}
           mode="outlined"
+          maxLength={50}
           right={<TextInput.Icon icon={'email'} />}
         />
         <TextInput
           testID="pwdInput"
           label={strings('password')}
           value={password}
+          maxLength={15}
           onChangeText={text => handleChangePassword(text)}
           style={styles.mt16}
           mode="outlined"
@@ -63,7 +64,7 @@ const Login = () => {
     <>
       <Header title={strings('screen1Title')} />
       <View style={styles.root}>
-        <Form />
+        {getForm()}
         <Button
           accessibilityLabel="submitBtn"
           testID="submitBtn"
