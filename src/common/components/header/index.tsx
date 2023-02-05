@@ -68,7 +68,9 @@ const Header = ({title = '', ExtraView = null, navigation}: any) => {
   return (
     <>
       <Appbar.Header style={styles.header} mode="small">
-        {navigation && <Appbar.BackAction onPress={goBack} color={WHITE} />}
+        {navigation && (
+          <Appbar.BackAction onPress={goBack} color={WHITE} testID="backBtn" />
+        )}
         <Appbar.Content title={title} color={WHITE} />
         {ExtraView}
         <LanguageMenu />

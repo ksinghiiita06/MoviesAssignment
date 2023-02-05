@@ -1,9 +1,9 @@
 import configureStore from 'redux-mock-store';
-import {render} from '@testing-library/react-native';
+import {render, fireEvent, screen} from '@testing-library/react-native';
 import React from 'react';
 import Header from '..';
 import {Provider} from 'react-redux';
-import {SafeAreaProvider} from 'react-native-safe-area-context';
+import {MenuProvider} from 'react-native-popup-menu';
 
 describe('Common Header', () => {
   const initialState = {
@@ -15,13 +15,14 @@ describe('Common Header', () => {
   beforeEach(() => {
     wrapper = render(
       <Provider store={store}>
-        {/* <SafeAreaProvider> */}
-        <Header />
-        {/* </SafeAreaProvider> */}
+        <MenuProvider>
+          <Header navigation={jest.fn()} />
+        </MenuProvider>
       </Provider>,
     );
   });
   it('Header renders correctly ', () => {
     expect(wrapper.toJSON()).toMatchSnapshot();
+    fireEvent.press(screen.getByTestId('backBtn'));
   });
 });

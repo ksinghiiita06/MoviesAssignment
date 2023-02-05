@@ -637,9 +637,9 @@ exports[`Login renders correctly Login renders correctly  1`] = `
               </Text>
             </View>
             <TextInput
-              accessibilityLabel="emailInput"
               editable={true}
               maxFontSizeMultiplier={1.5}
+              maxLength={50}
               multiline={false}
               onBlur={[Function]}
               onChangeText={[Function]}
@@ -1060,6 +1060,7 @@ exports[`Login renders correctly Login renders correctly  1`] = `
             <TextInput
               editable={true}
               maxFontSizeMultiplier={1.5}
+              maxLength={15}
               multiline={false}
               onBlur={[Function]}
               onChangeText={[Function]}

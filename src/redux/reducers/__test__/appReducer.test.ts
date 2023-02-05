@@ -25,7 +25,7 @@ describe('appReducer', () => {
     });
   });
   it('should handle CHANGE_APP_STATE_LOGGED_IN', () => {
-    expect(AppReducer(initialState, changeLoginStateAction())).toEqual({
+    expect(AppReducer(initialState, changeLoginStateAction(true))).toEqual({
       ...initialState,
       isLoggedIn: true,
     });

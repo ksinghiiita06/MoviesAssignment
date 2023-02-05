@@ -35,7 +35,7 @@ const Login = () => {
           testID="emailInput"
           label={strings('email')}
           value={email}
-          onChangeText={text => handleChangeEmail(text)}
+          onChangeText={handleChangeEmail}
           mode="outlined"
           maxLength={50}
           right={<TextInput.Icon icon={'email'} />}
@@ -45,7 +45,7 @@ const Login = () => {
           label={strings('password')}
           value={password}
           maxLength={15}
-          onChangeText={text => handleChangePassword(text)}
+          onChangeText={handleChangePassword}
           style={styles.mt16}
           mode="outlined"
           secureTextEntry={!showPwd}
