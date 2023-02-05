@@ -51,28 +51,3 @@ describe('Movies component with error', () => {
     expect(wrapper.toJSON()).toMatchSnapshot();
   });
 });
-// describe('Movies component renders correctly', () => {
-//   const mockStore = configureStore();
-//   const initialState = {
-//     appReducer: {},
-//     moviesReducer: {
-//       fetching: false,
-//       error: null,
-//       moviesResponse: {results: []},
-//     },
-//   };
-//   const store = mockStore(initialState);
-//   let wrapper: any;
-//   beforeEach(() => {
-//     wrapper = render(
-//       <Provider store={store}>
-//         <MenuProvider>
-//           <Movies />
-//         </MenuProvider>
-//       </Provider>,
-//     );
-//   });
-//   it('Movies renders correctly ', () => {
-//     expect(wrapper.toJSON()).toMatchSnapshot();
-//   });
-// });
