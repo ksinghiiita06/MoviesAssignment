@@ -1,5 +1,4 @@
 import {StyleSheet} from 'react-native';
-import {isRTL} from '../../common/localize';
 import {normalize} from '../../common/utils';
 const styles = StyleSheet.create({
   root: {

@@ -20,12 +20,14 @@ const styles = StyleSheet.create({
     padding: normalize(8),
     fontSize: normalize(15),
     color: BLACK,
+    alignSelf: 'flex-start',
     fontWeight: 'bold',
   },
   langSelectedText: {
     padding: normalize(8),
     fontSize: normalize(15),
     color: DISABLED_TEXT_COLOR,
+    alignSelf: 'flex-start',
     fontWeight: 'bold',
   },
   menuContainer: {

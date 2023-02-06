@@ -6,5 +6,7 @@
   "submit": "Submit",
   "generic_error": "Something went wrong...",
   "loading": "Loading...",
-  "empty_list_msg": "No data to show..."
+  "empty_list_msg": "No data to show...",
+  "invalid_email": "Invalid email",
+  "password_rule": "Password must be alphanumeric with at least one capital letter and 1 special character and min length: 8"
 }
